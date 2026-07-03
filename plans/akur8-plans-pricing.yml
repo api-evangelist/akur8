@@ -1,0 +1,78 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Akur8
+providerId: akur8
+created: '2026-07-03'
+modified: '2026-07-03'
+reconciled: false
+tags:
+- Insurance
+- Insurtech
+- Actuarial
+- Pricing
+- Plans
+description: >-
+  Akur8 does not publish self-serve pricing or plan tiers. Prospective customers
+  start with a free, sales-led pilot (typically two weeks, part-time for one or
+  two people) to evaluate the platform on their own data before any commercial
+  commitment. Beyond the pilot, Akur8 is sold as an enterprise contract; the
+  company states cost "depends on the volume of insurance premiums being modeled
+  on our platform" and includes regular platform updates and upgrades. No unit
+  price, per-seat fee, or usage rate is disclosed publicly - prospects must
+  contact sales for a quote.
+notes: >-
+  No published numeric pricing exists to reconcile. Verify current terms directly
+  with Akur8 sales; this file only reflects the qualitative pricing model
+  described on akur8.com/resources/faq.
+sources:
+- https://www.akur8.com/resources/faq
+- https://www.akur8.com/pricing
+- https://www.akur8.com/contact
+plans:
+- id: akur8-pilot
+  name: Free Pilot
+  type: free
+  description: >-
+    A completely free, typically two-week pilot requiring one to two people
+    part-time, run on the prospect's own data before any purchase decision.
+  entries:
+  - label: Pilot Program
+    name: pilot
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: one-time
+    geo: global
+    unit: 1
+    price: free (time-boxed, ~2 weeks)
+    userMultiplied: false
+  elements:
+  - name: Evaluation on Own Data
+  - name: Actuarial Team Support
+- id: akur8-enterprise
+  name: Enterprise / Custom
+  type: enterprise
+  description: >-
+    Ongoing commercial use of Akur8 Pricing, Reserving, and/or Life, priced by
+    the volume of insurance premiums modeled on the platform, and inclusive of
+    regular solution updates and upgrades. Contact Akur8 for a quote.
+  entries:
+  - label: Enterprise Agreement
+    name: enterprise
+    type: usage
+    metric: premium_volume
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales; scaled to premium volume modeled
+    userMultiplied: false
+  elements:
+  - name: Volume-Based Pricing
+  - name: Platform Updates and Upgrades
+  - name: Akur8 Deploy Rating Endpoint Provisioning
+  - name: Actuarial Data Science Support
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

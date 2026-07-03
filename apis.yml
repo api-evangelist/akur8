@@ -1,0 +1,62 @@
+aid: akur8
+url: https://raw.githubusercontent.com/api-evangelist/akur8/refs/heads/main/apis.yml
+name: Akur8
+kind: company
+description: Akur8 is a cloud-based actuarial AI platform for P&C and life insurers,
+  covering pricing (Data, Risk, Demand, Rate, Rate Repo, Optim, Discover), reserving,
+  and production deployment of rating models. There is no self-serve public developer
+  API or public API reference published on akur8.com; the platform is sold and
+  onboarded as enterprise SaaS through a sales-led, typically two-week free pilot.
+  The one confirmed API capability is Akur8 Deploy - once a pricing model built in
+  Akur8 Rate is finalized, Deploy auto-generates a private, tenant-specific
+  real-time REST rating/scoring endpoint that a customer's own policy admin or
+  quoting system calls at quote time to return a price in milliseconds. Access to
+  that generated endpoint is provisioned per customer within a paid contract, not
+  published for anonymous developer signup; rating tables can also be exported in
+  CSV, JSON, PMML, and POJO formats for offline integration.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Insurance
+- Insurtech
+- Actuarial
+- Pricing
+- GLM
+- Rating Engine
+created: '2026-07-03'
+modified: '2026-07-03'
+specificationVersion: '0.19'
+apis:
+- aid: akur8:akur8-deploy-rating-api
+  name: Akur8 Deploy Rating API
+  tags:
+  - Rating
+  - Scoring
+  - Real-Time
+  - Deploy
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.akur8.com/pricing/deploy
+  properties:
+  - url: https://www.akur8.com/pricing/deploy
+    type: Documentation
+  - url: https://www.akur8.com/resources/faq
+    type: Documentation
+  description: Akur8 Deploy auto-generates a real-time REST rating endpoint from a
+    finalized pricing model built in Akur8 Rate. A customer's policy admin system or
+    quoting engine calls the generated endpoint to score/rate a risk and receive a
+    price in milliseconds. The endpoint is provisioned per customer, per deployed
+    model, inside a paid Akur8 contract - there is no fixed public base URL, no
+    self-serve signup, and no published API reference. Rating tables can also be
+    exported in CSV, JSON, PMML, and POJO formats as a non-API integration path.
+  endpointsModeled: true
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/akur8
+- type: Website
+  url: https://www.akur8.com/
+- type: Plans
+  url: plans/akur8-plans-pricing.yml
+- type: FinOps
+  url: finops/akur8-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

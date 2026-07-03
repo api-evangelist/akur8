@@ -1,0 +1,89 @@
+aid: akur8
+name: Akur8
+review:
+  question: Does Akur8 expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-03'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Akur8 does not publish a public API
+    reference of any kind - REST, SSE, or WebSocket. The one confirmed API
+    capability, the Akur8 Deploy rating endpoint, is described in marketing
+    copy only as a synchronous request/response REST call ("a responsive API
+    that implements your pricing structure," returning a price "in
+    milliseconds"). There is no evidence of a server-push, streaming, or
+    bidirectional transport on that endpoint, so there is no protocol surface
+    to model in AsyncAPI.
+findings:
+  summary: |
+    Akur8 does not publish a documented public WebSocket API, and in fact does
+    not publish any public developer API reference at all. Akur8 is an
+    enterprise actuarial SaaS platform (Pricing, Reserving, Life) delivered
+    through a web application and a sales-led onboarding process (a free,
+    ~2-week pilot precedes any contract). The only confirmed API capability is
+    Akur8 Deploy: once a pricing model built in Akur8 Rate is finalized,
+    Deploy auto-generates a private, tenant-specific real-time REST rating
+    endpoint that the customer's own policy admin or quoting system calls at
+    quote time. Marketing copy describes it as "a responsive API," accessible
+    via a "secure real-time API point," delivering results "in milliseconds,"
+    but no fixed base URL, endpoint paths, request/response schema, or public
+    API reference is published anywhere on akur8.com. Access is provisioned
+    per customer inside a paid contract, not opened for anonymous self-serve
+    signup. Rating tables can also be exported in CSV, JSON, PMML, and POJO
+    formats as a non-API, batch integration path. No WebSocket (ws:// or
+    wss://) endpoint is documented or implied anywhere on the site.
+  accessModel: |
+    Gated / enterprise-provisioned. There is no public developer portal, no
+    api.akur8.com or docs.akur8.com, and no self-serve API key signup. Prospects
+    engage through a free pilot, then a commercial contract; the Deploy rating
+    endpoint is generated and handed to that specific customer as part of
+    delivery, not published as a shared, versioned public API surface.
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: true
+      note: Akur8 Deploy generates a tenant-specific REST rating endpoint per deployed pricing model, described as "a responsive API" returning results in milliseconds. No fixed public base URL or endpoint reference is published.
+    - protocol: File Export
+      scheme: n/a
+      documented: true
+      note: Rating tables can be exported as CSV, JSON, PMML, or POJO for offline/batch integration instead of calling a live endpoint.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere on akur8.com, the Pricing/Deploy product pages, or the FAQ.
+  endpointsPubliclyDocumented: []
+  endpointsNote: |
+    No concrete endpoint paths, base URLs, or request/response schemas are
+    published for the Akur8 Deploy rating API. Only capability-level marketing
+    language ("real-time API point," "responsive API," results "in
+    milliseconds") is publicly available; the apis.yml entry for this API is
+    therefore honestly marked endpointsModeled and carries no OpenAPI document
+    or endpoint list, to avoid fabricating a surface that Akur8 has not
+    disclosed.
+sources:
+  - url: https://www.akur8.com/
+    type: Website
+    note: Platform overview across Pricing, Reserving, and Life products; no public API/developer portal linked.
+  - url: https://www.akur8.com/pricing
+    type: Documentation
+    note: Describes the Pricing product suite (Data, Risk, Demand, Rate, Rate Repo, Optim, Discover, Deploy) as "API-enabled" with a "productized API," no technical reference.
+  - url: https://www.akur8.com/pricing/deploy
+    type: Documentation
+    note: Describes Deploy generating a real-time API per deployed model, integrating "via real-time API point" with policy admin systems, results in milliseconds.
+  - url: https://www.akur8.com/resources/faq
+    type: Documentation
+    note: Confirms "secure real-time API points," rating table export formats (CSV/JSON/PMML/POJO), the free ~2-week pilot, and volume-based enterprise pricing with no public rate card.
+  - url: https://www.linkedin.com/company/akur8
+    type: LinkedIn
+    note: Official company LinkedIn page.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists, and Akur8 publishes no public REST
+    API reference either. The apis.yml entry for Akur8 Deploy's rating
+    endpoint is scoped honestly as a modeled, gated capability
+    (endpointsModeled: true) with no baseURL, no OpenAPI document, and no
+    fabricated endpoint list, since Akur8 does not disclose those details
+    publicly.

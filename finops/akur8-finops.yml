@@ -1,0 +1,82 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Akur8
+providerId: akur8
+created: '2026-07-03'
+modified: '2026-07-03'
+reconciled: false
+tags:
+- Insurance
+- Insurtech
+- Actuarial
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Akur8 spend. Akur8 is bought as an enterprise SaaS contract, not
+  metered per-API-call; akur8.com states cost "depends on the volume of insurance
+  premiums being modeled on our platform" and includes regular updates and
+  upgrades. There is no published per-request or per-token price for the Akur8
+  Deploy rating endpoint, since that endpoint is provisioned privately per
+  customer/model rather than billed through a public usage API. A free, ~2-week
+  pilot precedes any paid commitment.
+notes: >-
+  No public per-unit rates exist to reconcile. This file reflects only the
+  qualitative, premium-volume-based billing model described on
+  akur8.com/resources/faq; verify actual contract economics directly with Akur8.
+sources:
+- https://www.akur8.com/resources/faq
+- https://www.akur8.com/pricing
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Akur8
+serviceCategory: Insurtech / Actuarial Software
+billingModel:
+  pricingCategory: Enterprise Contract
+  billingFrequency: Annual
+  billingCurrency: USD
+  chargeCategories:
+  - Usage
+  - Purchase
+focusColumns:
+  ServiceName: Akur8 Platform
+  ServiceCategory: Insurtech / Actuarial Software
+  ProviderName: Akur8
+  PublisherName: Akur8
+  InvoiceIssuerName: Akur8
+  BillingCurrency: USD
+  ChargeCategory: Usage
+  PricingCategory: Enterprise Contract
+meters:
+- name: premium_volume
+  description: Volume of insurance premiums modeled on the Akur8 platform; the stated basis for enterprise contract pricing.
+  unit: currency
+  aggregation: sum
+  dimensions:
+  - account
+  - line_of_business
+- name: deploy_endpoint_provisioning
+  description: Per-customer, per-model provisioning of an Akur8 Deploy real-time rating endpoint. Not separately metered publicly.
+  unit: endpoints
+  aggregation: count
+  dimensions:
+  - account
+  - model
+principles:
+- name: Visibility
+  description: Track premium volume modeled per line of business, since that is the disclosed basis for Akur8's contract pricing.
+- name: Allocation
+  description: Map Akur8 usage (Pricing, Reserving, Life, Deploy endpoints) to the actuarial/pricing teams and lines of business they serve.
+- name: Optimization
+  description: Use the free pilot to validate value before committing to an enterprise term; consolidate deployed rating models to avoid redundant Deploy provisioning.
+- name: Accountability
+  description: Assign contract ownership to the actuarial/pricing function; review annual renewal terms against actual premium volume modeled.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
