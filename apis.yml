@@ -49,6 +49,10 @@ apis:
     exported in CSV, JSON, PMML, and POJO formats as a non-API integration path.
   endpointsModeled: true
 common:
+- type: TrustCenter
+  url: security/akur8-trust-center.yml
+- type: DomainSecurity
+  url: security/akur8-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/akur8
 - type: Website
@@ -57,6 +61,8 @@ common:
   url: plans/akur8-plans-pricing.yml
 - type: FinOps
   url: finops/akur8-finops.yml
+- url: https://www.akur8.com/blog
+  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
