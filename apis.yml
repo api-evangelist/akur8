@@ -36,7 +36,7 @@ tags:
 - Rating Engine
 created: '2026-07-03'
 modified: '2026-07-03'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: akur8:akur8-deploy-rating-api
   name: Akur8 Deploy Rating API
