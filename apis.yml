@@ -14,6 +14,17 @@ description: Akur8 is a cloud-based actuarial AI platform for P&C and life insur
   that generated endpoint is provisioned per customer within a paid contract, not
   published for anonymous developer signup; rating tables can also be exported in
   CSV, JSON, PMML, and POJO formats for offline integration.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: approval
