@@ -52,6 +52,11 @@ apis:
 - aid: akur8:akur8-deploy-rating-api
   name: Akur8 Deploy Rating API
   tags:
+  - Ratings
+  - Scoring
+  - Real-Time
+  - Deploy
+  tags_raw:
   - Rating
   - Scoring
   - Real-Time
