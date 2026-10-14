@@ -15,3 +15,16 @@
   relationship: distribution-channel
   status: not-a-workflow
   arazzo: null
+- slug: akur8-guidewire-own
+  label: Guidewire (own)
+  partner: guidewire
+  partner_name: Guidewire (own)
+  category: Accelerator; Rating & Pricing; PolicyCenter
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.guidewire.com/product/01tPW00000IIolZYAT/01tPW00000IIolZYAT
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
