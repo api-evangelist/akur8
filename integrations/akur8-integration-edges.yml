@@ -5,21 +5,6 @@ checked:
 - https://aws.amazon.com/marketplace/
 marketplace_apps: []
 edges:
-- partner_name: AWS Marketplace
-  partner: amazon-web-services
-  partner_match: aggregator
-  type: marketplace
-  marketplace: aws-marketplace
-  channel: distribution
-  relationship: distribution-channel
-  direction: third-party
-  evidence: https://aws.amazon.com/marketplace/seller-profile?id=seller-vay3u3omgi7tw
-  listing_count: 1
-  apps:
-  - Modeling
-  seller_name: Akur8
-  detected_by: sweep-cloud-marketplaces.py
-  detected: '2026-10-13'
 - partner_name: Guidewire (own)
   partner: guidewire
   partner_match: mirror
@@ -42,5 +27,20 @@ edges:
   badges:
   - Ready for Guidewire
   - 'Partner tier: Growth'
+- partner_name: AWS Marketplace
+  partner: amazon-web-services
+  partner_match: aggregator
+  type: marketplace
+  marketplace: aws-marketplace
+  channel: distribution
+  relationship: distribution-channel
+  direction: third-party
+  evidence: https://aws.amazon.com/marketplace/seller-profile?id=seller-vay3u3omgi7tw
+  listing_count: 1
+  apps:
+  - Akur8 Pricing
+  seller_name: Akur8
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
 source:
 - guidewire/integrations/guidewire-integration-edges.yml
