@@ -1,4 +1,4 @@
-# Akur8 (akur8)
+# Akur8
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,54 +66,95 @@
 
 Akur8 is a cloud-based actuarial AI platform for P&C and life insurers, covering pricing (Data, Risk, Demand, Rate, Rate Repo, Optim, Discover), reserving, and production deployment of rating models. There is no self-serve public developer API or public API reference published on akur8.com; the platform is sold and onboarded as enterprise SaaS through a sales-led, typically two-week free pilot. The one confirmed API capability is Akur8 Deploy - once a pricing model built in Akur8 Rate is finalized, Deploy auto-generates a private, tenant-specific real-time REST rating/scoring endpoint that a customer's own policy admin or quoting system calls at quote time to return a price in milliseconds. Access to that generated endpoint is provisioned per customer within a paid contract, not published for anonymous developer signup; rating tables can also be exported in CSV, JSON, PMML, and POJO formats for offline integration.
 
-**Access model:** Gated / enterprise-provisioned. No public developer portal, no `api.akur8.com` or `docs.akur8.com`, no self-serve API keys. See [review.yml](review.yml) for the full findings.
+**Areas:** Insurance · Insurtech · Actuarial · Pricing · GLM · Rating Engine
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/akur8/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/akur8/refs/heads/main/apis.yml)
+## Akur8 on APIs.io
 
-## Tags
+Everything profiled for Akur8 is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/akur8/](https://apis.io/providers/akur8/)** — or go straight to one of the APIs or properties below.
 
-- Insurance
-- Insurtech
-- Actuarial
-- Pricing
-- GLM
-- Rating Engine
+### APIs (1)
 
-## Timestamps
+- [Akur8 Deploy Rating API](https://apis.io/apis/akur8/akur8-deploy-rating-api/) — Akur8 Deploy auto-generates a real-time REST rating endpoint from a finalized pricing model built in Akur8 Rate. A customer's policy admin system or quoting…
 
-- **Created:** 2026-07-03
-- **Modified:** 2026-07-03
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Akur8 Deploy Rating API
+#### Security (2)
 
-Akur8 Deploy auto-generates a real-time REST rating endpoint from a finalized pricing model built in Akur8 Rate. A customer's policy admin system or quoting engine calls the generated endpoint to score/rate a risk and receive a price in milliseconds. The endpoint is provisioned per customer, per deployed model, inside a paid Akur8 contract - there is no fixed public base URL, no self-serve signup, and no published API reference. Rating tables can also be exported in CSV, JSON, PMML, and POJO formats as a non-API integration path.
+Authentication, trust centre, and vulnerability disclosure.
 
-*This API is modeled from publicly available marketing/FAQ language only (`endpointsModeled: true`); no endpoint paths, base URL, or request/response schema are published by Akur8.*
+- [Akur8 Domain Security](https://apis.io/security/akur8/akur8-domain-security/)
+- [Akur8 Trust Center](https://apis.io/security/akur8/akur8-trust-center/)
 
-- **Human URL:** [https://www.akur8.com/pricing/deploy](https://www.akur8.com/pricing/deploy)
+#### Plans and pricing (1)
 
-#### Tags
+Published plans, tiers and prices.
 
-- Rating
-- Scoring
-- Real-Time
-- Deploy
+- [Akur8 Plans Pricing](https://apis.io/plans/akur8/akur8-plans-pricing/)
 
-#### Properties
+#### FinOps (1)
 
-- [Documentation](https://www.akur8.com/pricing/deploy)
-- [Documentation](https://www.akur8.com/resources/faq)
+What the API costs to run, by operation.
 
-## Common Properties
+- [Akur8 Finops](https://apis.io/finops/akur8/akur8-finops/)
 
-- [LinkedIn](https://www.linkedin.com/company/akur8)
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.akur8.com/)
-- [Plans](plans/akur8-plans-pricing.yml)
-- [Fin Ops](finops/akur8-finops.yml)
+- [Blog](https://www.akur8.com/blog)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 9.7** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 13.2 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 9.6** — Insurance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/akur8/](https://apis.io/providers/akur8/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Akur8: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/akur8/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
